@@ -1,0 +1,182 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import CertImage from "@/assets/images/certificado.avif"
+import {titulaciones} from "@/data/tabs.json"
+
+const grados = [
+  {
+    codigo: 'GII-IC',
+    titulo: 'GII – Ingeniería de Computadores',
+    sello: 'EUR-ACE®',
+    descripcion:
+      'Formación de profesionales habilitados en el diseño, construcción, implementación y aplicación de sistemas informáticos modernos, redes de computadores y sistemas controlados por computador.',
+    detalles: 'Satisface las guías ACM Computing Curricula (Computer Engineering).',
+    badge: 'Grado Oficial',
+  },
+  {
+    codigo: 'GII-IS',
+    titulo: 'GII – Ingeniería del Software',
+    sello: 'EUR-ACE®',
+    descripcion:
+      'Formación completa sobre la planificación y dirección de proyectos, elicitación de requisitos, diseño, pruebas y gestión del ciclo de vida del software.',
+    detalles: 'Satisface las guías ACM (Software Engineering). Incluye grupo en inglés (mín. 50% docencia) reflejado en el Suplemento Europeo.',
+    badge: 'Grupo Inglés Disponible',
+  },
+  {
+    codigo: 'GII-TI',
+    titulo: 'GII – Tecnologías Informáticas',
+    sello: 'EUR-ACE®',
+    descripcion:
+      'Formación inicial común con especialización posterior en tres menciones principales.',
+    menciones: ['Sistemas de Información', 'Tecnologías de la Información', 'Computación'],
+    detalles: 'Satisface las guías ACM para IS, IT y Computer Science según la mención.',
+    badge: '3 Menciones',
+  },
+  {
+    codigo: 'DG-MAT',
+    titulo: 'Doble Grado en Ing. Informática - TI y Matemáticas',
+    sello: 'EUR-ACE®',
+    duracion: '5 Años',
+    descripcion:
+      'Formación de excelencia que combina el rigor del análisis matemático con las competencias en tecnologías informáticas para una posición ventajosa en el mercado laboral TIC.',
+    badge: 'Doble Título',
+  },
+  {
+    codigo: 'GIS',
+    titulo: 'Grado en Ingeniería de la Salud',
+    sello: 'EUR-ACE®',
+    descripcion:
+      'Título conjunto con la Universidad de Málaga (AndaluciaTech) enfocado en diseñar, desarrollar y evaluar sistemas e instalaciones en el ámbito sanitario.',
+    menciones: [
+      'Ingeniería Biomédica (Impartida en ETSII)',
+      'Informática Clínica (Impartida en ETSII)',
+      'Bioinformática (UMA)',
+    ],
+    badge: 'AndaluciaTech',
+  },
+  {
+    codigo: 'GII-IA',
+    titulo: 'Grado en Ing. Informática - Inteligencia Artificial',
+    sello: 'Mención Dual',
+    descripcion:
+      'Formación altamente especializada en Inteligencia Artificial con opción a mención dual (hasta 5 plazas) bajo contrato laboral de formación en empresas colaboradoras (RD822/2021).',
+    badge: 'Mención Dual / 5 Plazas',
+  },
+];
+---
+
+<Layout title={titulaciones.title} description={titulaciones.description}>
+    <section id="titulaciones" class="relative min-h-screen w-full bg-neutral-950 font-mono text-white pt-28 pb-20 overflow-hidden">
+  <!-- Malla de fondo estilo Cybergrid -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293715_1px,transparent_1px),linear-gradient(to_bottom,#1f293715_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+
+  <!-- Glows Neón de fondo -->
+  <div class="pointer-events-none absolute top-1/4 left-10 h-96 w-96 rounded-full bg-yellow-400/5 blur-[120px]"></div>
+  <div class="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-yellow-400/10 blur-[100px]"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    
+    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <div class="mb-12 flex flex-col items-start gap-4 border-b border-neutral-800 pb-8">
+      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-neutral-900/80 px-3.5 py-1.5 text-xs text-yellow-400 backdrop-blur-md shadow-[0_0_15px_rgba(250,204,21,0.1)]">
+        <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+        <span>// OFERTA_ACADÉMICA</span>
+      </div>
+
+      <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+        Titulaciones de <span class="text-transparent bg-clip-text bg-linear-to-r from-yellow-300 via-yellow-400 to-amber-500 drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">Grado y Menciones</span>
+      </h1>
+
+      <p class="max-w-3xl text-sm leading-relaxed text-neutral-400 sm:text-base">
+        Nuestros planes de estudio cuentan con el sello de calidad internacional <span class="text-yellow-400 font-semibold">EUR-ACE®</span>, garantizando el reconocimiento y la excelencia académica según los estándares europeos de ingeniería.
+      </p>
+
+      <!-- Badge EUR-ACE Destacado -->
+      <div class="mt-2 flex items-center gap-3 rounded-lg border border-yellow-400/20 bg-neutral-900/60 p-3 text-xs text-neutral-300">
+        <span class="font-bold text-yellow-400">EUR-ACE® SEAL:</span>
+        <span>Garantía de calidad, transparencia y movilidad europea para nuestros egresados.</span>
+      </div>
+
+      <div class="max-w-60 mx-auto md:ml-2">
+        <img src={CertImage.src} alt="Certificado EUR-ACE">
+      </div>
+    </div>
+
+    <!-- REJILLA DE TITULACIONES -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        grados.map((item) => (
+          <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 backdrop-blur-md transition-all duration-300 hover:border-yellow-400/50 hover:bg-neutral-900/80 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)]">
+            
+            <!-- Adornos Tech en Esquinas -->
+            <div class="absolute top-0 right-0 h-8 w-px bg-gradient-to-b from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="absolute top-0 right-0 h-px w-8 bg-gradient-to-l from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+            <div>
+              <!-- Código y Badge superior -->
+              <div class="mb-4 flex items-center justify-between">
+                <span class="rounded bg-neutral-800 px-2.5 py-1 text-[10px] font-bold tracking-widest text-yellow-400 border border-yellow-400/20">
+                  {item.codigo}
+                </span>
+                <span class="text-[10px] uppercase font-semibold text-neutral-400 border border-neutral-700 rounded px-2 py-0.5">
+                  {item.badge}
+                </span>
+              </div>
+
+              <!-- Título de la Carrera -->
+              <h3 class="mb-3 text-lg font-bold text-white transition-colors group-hover:text-yellow-400">
+                {item.titulo}
+              </h3>
+
+              <!-- Descripción -->
+              <p class="mb-4 text-xs leading-relaxed text-neutral-400">
+                {item.descripcion}
+              </p>
+
+              <!-- Menciones / Listas opcionales -->
+              {item.menciones && (
+                <div class="mb-4 rounded-lg border border-neutral-800/80 bg-neutral-950/60 p-3">
+                  <span class="block text-[10px] font-bold text-yellow-400/90 uppercase tracking-wider mb-1">
+                    Menciones / Especialidades:
+                  </span>
+                  <ul class="space-y-1 text-[11px] text-neutral-300">
+                    {item.menciones.map((mencion) => (
+                      <li class="flex items-center gap-1.5">
+                        <span class="text-yellow-400">&gt;</span>
+                        <span>{mencion}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <!-- Detalles ACM o Requisitos -->
+              {item.detalles && (
+                <p class="text-[11px] text-neutral-500 italic">
+                  {item.detalles}
+                </p>
+              )}
+            </div>
+
+            <!-- Footer de la Card / CTA -->
+            <div class="mt-6 border-t border-neutral-800/80 pt-4 flex items-center justify-between">
+              <span class="text-[11px] font-semibold text-yellow-400/80">
+                Sello {item.sello}
+              </span>
+              <a
+                href={`#${item.codigo.toLowerCase()}`}
+                class="inline-flex items-center gap-1 text-xs font-bold text-neutral-300 transition-colors group-hover:text-yellow-400"
+              >
+                <span>Saber más</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+</Layout>

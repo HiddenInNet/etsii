@@ -1,0 +1,10 @@
+{
+  "home": {
+    "title": "ETSII - Página principal",
+    "description": "Página principal de información para el alumnado de la ETSII"
+  },
+  "titulaciones": {
+    "title": "ETSII - Titulaciones",
+    "description": "Titulaciones pertenecientes a la ETSII"
+  }
+}

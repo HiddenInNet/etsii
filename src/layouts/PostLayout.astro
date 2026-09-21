@@ -1,0 +1,29 @@
+---
+import Schema from '@/components/Schema.astro'
+import type { Article } from 'schema-dts'
+import Layout from './Layout.astro'
+
+const { frontmatter } = Astro.props
+
+const articleSchema: Article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  image: frontmatter.image.src,
+  datePublished: frontmatter.publishDate,
+  author: {
+    '@type': 'Person',
+    name: frontmatter.author,
+  },
+}
+---
+
+<Layout {...frontmatter}>
+  <Fragment slot="head">
+    <Schema schema={articleSchema} />
+  </Fragment>
+  <article>
+    <slot />
+  </article>
+</Layout>

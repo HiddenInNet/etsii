@@ -1,0 +1,10 @@
+# Permitir a todos los bots rastrear todo el sitio
+User-agent: *
+Allow: /
+
+# Bloquear la indexación de entornos de preview
+User-agent: *
+Disallow: /preview/
+
+# Ubicación del Sitemap
+Sitemap: https://www.etsii.es/sitemap-index.xml
