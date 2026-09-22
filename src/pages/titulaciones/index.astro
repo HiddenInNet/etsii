@@ -2,81 +2,18 @@
 import Layout from "@/layouts/Layout.astro";
 import CertImage from "@/assets/images/certificado.avif"
 import {titulaciones} from "@/data/tabs.json"
+import {grados} from "@/data/titulaciones/grados.json"
+import BackgroundEffect from "@/components/utils/background/BackgroundEffect.astro";
 
-const grados = [
-  {
-    codigo: 'GII-IC',
-    titulo: 'GII – Ingeniería de Computadores',
-    sello: 'EUR-ACE®',
-    descripcion:
-      'Formación de profesionales habilitados en el diseño, construcción, implementación y aplicación de sistemas informáticos modernos, redes de computadores y sistemas controlados por computador.',
-    detalles: 'Satisface las guías ACM Computing Curricula (Computer Engineering).',
-    badge: 'Grado Oficial',
-  },
-  {
-    codigo: 'GII-IS',
-    titulo: 'GII – Ingeniería del Software',
-    sello: 'EUR-ACE®',
-    descripcion:
-      'Formación completa sobre la planificación y dirección de proyectos, elicitación de requisitos, diseño, pruebas y gestión del ciclo de vida del software.',
-    detalles: 'Satisface las guías ACM (Software Engineering). Incluye grupo en inglés (mín. 50% docencia) reflejado en el Suplemento Europeo.',
-    badge: 'Grupo Inglés Disponible',
-  },
-  {
-    codigo: 'GII-TI',
-    titulo: 'GII – Tecnologías Informáticas',
-    sello: 'EUR-ACE®',
-    descripcion:
-      'Formación inicial común con especialización posterior en tres menciones principales.',
-    menciones: ['Sistemas de Información', 'Tecnologías de la Información', 'Computación'],
-    detalles: 'Satisface las guías ACM para IS, IT y Computer Science según la mención.',
-    badge: '3 Menciones',
-  },
-  {
-    codigo: 'DG-MAT',
-    titulo: 'Doble Grado en Ing. Informática - TI y Matemáticas',
-    sello: 'EUR-ACE®',
-    duracion: '5 Años',
-    descripcion:
-      'Formación de excelencia que combina el rigor del análisis matemático con las competencias en tecnologías informáticas para una posición ventajosa en el mercado laboral TIC.',
-    badge: 'Doble Título',
-  },
-  {
-    codigo: 'GIS',
-    titulo: 'Grado en Ingeniería de la Salud',
-    sello: 'EUR-ACE®',
-    descripcion:
-      'Título conjunto con la Universidad de Málaga (AndaluciaTech) enfocado en diseñar, desarrollar y evaluar sistemas e instalaciones en el ámbito sanitario.',
-    menciones: [
-      'Ingeniería Biomédica (Impartida en ETSII)',
-      'Informática Clínica (Impartida en ETSII)',
-      'Bioinformática (UMA)',
-    ],
-    badge: 'AndaluciaTech',
-  },
-  {
-    codigo: 'GII-IA',
-    titulo: 'Grado en Ing. Informática - Inteligencia Artificial',
-    sello: 'Mención Dual',
-    descripcion:
-      'Formación altamente especializada en Inteligencia Artificial con opción a mención dual (hasta 5 plazas) bajo contrato laboral de formación en empresas colaboradoras (RD822/2021).',
-    badge: 'Mención Dual / 5 Plazas',
-  },
-];
+export const prerender = true;
 ---
 
 <Layout title={titulaciones.title} description={titulaciones.description}>
-    <section id="titulaciones" class="relative min-h-screen w-full bg-neutral-950 font-mono text-white pt-28 pb-20 overflow-hidden">
-  <!-- Malla de fondo estilo Cybergrid -->
-  <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293715_1px,transparent_1px),linear-gradient(to_bottom,#1f293715_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-
-  <!-- Glows Neón de fondo -->
-  <div class="pointer-events-none absolute top-1/4 left-10 h-96 w-96 rounded-full bg-yellow-400/5 blur-[120px]"></div>
-  <div class="pointer-events-none absolute bottom-10 right-10 h-80 w-80 rounded-full bg-yellow-400/10 blur-[100px]"></div>
-
+  <BackgroundEffect />
+  <section id="titulaciones" class="relative min-h-screen w-full font-mono text-white pt-28 pb-20 overflow-hidden">
+  
   <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     
-    <!-- ENCABEZADO DE LA SECCIÓN -->
     <div class="mb-12 flex flex-col items-start gap-4 border-b border-neutral-800 pb-8">
       <div class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-neutral-900/80 px-3.5 py-1.5 text-xs text-yellow-400 backdrop-blur-md shadow-[0_0_15px_rgba(250,204,21,0.1)]">
         <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
@@ -109,11 +46,10 @@ const grados = [
           <div class="group relative flex flex-col justify-between rounded-xl border border-neutral-800 bg-neutral-900/50 p-6 backdrop-blur-md transition-all duration-300 hover:border-yellow-400/50 hover:bg-neutral-900/80 hover:shadow-[0_0_20px_rgba(250,204,21,0.15)]">
             
             <!-- Adornos Tech en Esquinas -->
-            <div class="absolute top-0 right-0 h-8 w-px bg-gradient-to-b from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            <div class="absolute top-0 right-0 h-px w-8 bg-gradient-to-l from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="absolute top-0 right-0 h-8 w-px bg-linear-to-b from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="absolute top-0 right-0 h-px w-8 bg-linear-to-l from-yellow-400/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
             <div>
-              <!-- Código y Badge superior -->
               <div class="mb-4 flex items-center justify-between">
                 <span class="rounded bg-neutral-800 px-2.5 py-1 text-[10px] font-bold tracking-widest text-yellow-400 border border-yellow-400/20">
                   {item.codigo}
@@ -150,7 +86,6 @@ const grados = [
                 </div>
               )}
 
-              <!-- Detalles ACM o Requisitos -->
               {item.detalles && (
                 <p class="text-[11px] text-neutral-500 italic">
                   {item.detalles}
@@ -158,7 +93,6 @@ const grados = [
               )}
             </div>
 
-            <!-- Footer de la Card / CTA -->
             <div class="mt-6 border-t border-neutral-800/80 pt-4 flex items-center justify-between">
               <span class="text-[11px] font-semibold text-yellow-400/80">
                 Sello {item.sello}

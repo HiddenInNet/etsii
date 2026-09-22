@@ -1,0 +1,60 @@
+{
+  "grados": [
+    {
+      "codigo": "GII-IC",
+      "titulo": "GII – Ingeniería de Computadores",
+      "sello": "EUR-ACE®",
+      "descripcion": "Formación de profesionales habilitados en el diseño, construcción, implementación y aplicación de sistemas informáticos modernos, redes de computadores y sistemas controlados por computador.",
+      "detalles": "Satisface las guías ACM Computing Curricula (Computer Engineering).",
+      "badge": "Grado Oficial"
+    },
+    {
+      "codigo": "GII-IS",
+      "titulo": "GII – Ingeniería del Software",
+      "sello": "EUR-ACE®",
+      "descripcion": "Formación completa sobre la planificación y dirección de proyectos, elicitación de requisitos, diseño, pruebas y gestión del ciclo de vida del software.",
+      "detalles": "Satisface las guías ACM (Software Engineering). Incluye grupo en inglés (mín. 50% docencia) reflejado en el Suplemento Europeo.",
+      "badge": "Grupo Inglés Disponible"
+    },
+    {
+      "codigo": "GII-TI",
+      "titulo": "GII – Tecnologías Informáticas",
+      "sello": "EUR-ACE®",
+      "descripcion": "Formación inicial común con especialización posterior en tres menciones principales.",
+      "menciones": [
+        "Sistemas de Información",
+        "Tecnologías de la Información",
+        "Computación"
+      ],
+      "detalles": "Satisface las guías ACM para IS, IT y Computer Science según la mención.",
+      "badge": "3 Menciones"
+    },
+    {
+      "codigo": "DG-MAT",
+      "titulo": "Doble Grado en Ing. Informática - TI y Matemáticas",
+      "sello": "EUR-ACE®",
+      "duracion": "5 Años",
+      "descripcion": "Formación de excelencia que combina el rigor del análisis matemático con las competencias en tecnologías informáticas para una posición ventajosa en el mercado laboral TIC.",
+      "badge": "Doble Título"
+    },
+    {
+      "codigo": "GIS",
+      "titulo": "Grado en Ingeniería de la Salud",
+      "sello": "EUR-ACE®",
+      "descripcion": "Título conjunto con la Universidad de Málaga (AndaluciaTech) enfocado en diseñar, desarrollar y evaluar sistemas e instalaciones en el ámbito sanitario.",
+      "menciones": [
+        "Ingeniería Biomédica (Impartida en ETSII)",
+        "Informática Clínica (Impartida en ETSII)",
+        "Bioinformática (UMA)"
+      ],
+      "badge": "AndaluciaTech"
+    },
+    {
+      "codigo": "GII-IA",
+      "titulo": "Grado en Ing. Informática - Inteligencia Artificial",
+      "sello": "Mención Dual",
+      "descripcion": "Formación altamente especializada en Inteligencia Artificial con opción a mención dual (hasta 5 plazas) bajo contrato laboral de formación en empresas colaboradoras (RD822/2021).",
+      "badge": "Mención Dual / 5 Plazas"
+    }
+  ]
+}

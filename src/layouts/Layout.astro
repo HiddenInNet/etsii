@@ -1,6 +1,8 @@
 ---
 import '@/styles/main.css'
 import Header from '@/components/header/Header.astro'
+import Schema from '@/components/Schema.astro'
+import type { Article, WithContext } from 'schema-dts'
 
 interface Props {
   title: string
@@ -20,6 +22,19 @@ const {
   noindex = false,
 } = Astro.props
 
+const articleSchema: WithContext<Article> = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  image: image,
+  // datePublished: frontmatter.publishDate,
+  // author: {
+  //   '@type': 'Person',
+  //   name: frontmatter.author,
+  // },
+}
+
 const siteName = 'etsii'
 const formattedTitle = title === siteName ? title : `${title} | ${siteName}`
 ---
@@ -32,6 +47,7 @@ const formattedTitle = title === siteName ? title : `${title} | ${siteName}`
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <Schema schema={articleSchema} />
     <title>{formattedTitle}</title>
 
     <meta name="description" content={description} />

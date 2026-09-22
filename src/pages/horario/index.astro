@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { horario } from '@/data/tabs.json'
+import BackgroundEffect from '@/components/utils/background/BackgroundEffect.astro'
+---
+
+<Layout title={horario.title} description={horario.description}>
+  <BackgroundEffect />
+  <section
+    id="titulaciones"
+    class="relative min-h-screen w-full overflow-hidden pt-28 pb-20 font-mono text-white"
+  >
+  </section>
+</Layout>

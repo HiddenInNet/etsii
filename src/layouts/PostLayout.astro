@@ -1,11 +1,11 @@
 ---
 import Schema from '@/components/Schema.astro'
-import type { Article } from 'schema-dts'
+import type { Article, WithContext } from 'schema-dts'
 import Layout from './Layout.astro'
 
 const { frontmatter } = Astro.props
 
-const articleSchema: Article = {
+const articleSchema: WithContext<Article> = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: frontmatter.title,
