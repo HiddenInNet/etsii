@@ -7,4 +7,4 @@ User-agent: *
 Disallow: /preview/
 
 # Ubicación del Sitemap
-Sitemap: https://www.etsii.es/sitemap-index.xml
+Sitemap: https://etsii.es/sitemap-0.xml
