@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://etsii.es',
+  site: 'https://www.etsii.es',
   output: 'server',
   integrations: [sitemap()],
   vite: {
