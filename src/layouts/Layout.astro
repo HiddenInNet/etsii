@@ -53,6 +53,8 @@ const formattedTitle = title === siteName ? title : `${title} | ${siteName}`
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    <link rel="sitemap" href="/sitemap-0.xml" />
+
     <!-- Control de indexación dinámico -->
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     {!noindex && <meta name="robots" content="index, follow" />}
